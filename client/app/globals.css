@@ -21,3 +21,8 @@ body,
   @apply bg-white;
   @apply dark:bg-black;
 }
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}

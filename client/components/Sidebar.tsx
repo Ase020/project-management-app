@@ -106,7 +106,7 @@ function Sidebar() {
           <nav className="z-10 w-full">
             {projects.map(({ id, name }) => (
               <SidebarLink
-                href={`/projects/${name.toLowerCase()}`}
+                href={`/projects/${id}`}
                 label={name}
                 icon={Briefcase}
                 key={id}
