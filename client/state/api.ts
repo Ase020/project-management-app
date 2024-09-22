@@ -157,9 +157,9 @@ export const api = createApi({
     //   query: () => "teams",
     //   providesTags: ["Teams"],
     // }),
-    // search: build.query<SearchResults, string>({
-    //   query: (query) => `search?query=${query}`,
-    // }),
+    search: build.query<SearchResults, string>({
+      query: (query) => `search?query=${query}`,
+    }),
   }),
 });
 
@@ -169,7 +169,7 @@ export const {
   useGetTasksQuery,
   useCreateTaskMutation,
   useUpdateTaskStatusMutation,
-  // useSearchQuery,
+  useSearchQuery,
   // useGetUsersQuery,
   // useGetTeamsQuery,
   // useGetTasksByUserQuery,
