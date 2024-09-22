@@ -1,8 +1,17 @@
 "use client";
 
 import Header from "@/components/Header";
-import { Clock, Filter, Grid3X3, List, Share2, Table } from "lucide-react";
+import {
+  Clock,
+  Filter,
+  Grid3X3,
+  List,
+  PlusSquareIcon,
+  Share2,
+  Table,
+} from "lucide-react";
 import React from "react";
+import ModalNewProject from "./ModalNewProject";
 
 interface ProjectHeaderProps {
   activeTab: string;
@@ -15,8 +24,25 @@ function ProjectHeader({ activeTab, setActiveTab }: ProjectHeaderProps) {
   return (
     <div className="px-4 xl:px-6">
       {/* Modal new project */}
+      <ModalNewProject
+        isOpen={isModalNewProjectOpen}
+        onClose={() => setIsModalNewProjectOpen(false)}
+      />
+
       <div className="py-6 lg:pb-4 lg:pt-8">
-        <Header name="Project Design Development" buttonComponent isSmallText />
+        <Header
+          name="Project Design Development"
+          buttonComponent={
+            <button
+              className="flex items-center rounded-md bg-blue-primary px-3 py-2 text-white hover:bg-blue-600"
+              onClick={() => setIsModalNewProjectOpen(true)}
+            >
+              <PlusSquareIcon className="mr-2 size-5" />
+              New Boards
+            </button>
+          }
+          isSmallText
+        />
       </div>
 
       {/* Tabs */}
