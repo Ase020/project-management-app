@@ -26,7 +26,7 @@ const ModalNewProject = ({ isOpen, onClose }: Props) => {
       representation: "complete",
     });
 
-    const newProject = await createProject({
+    await createProject({
       name,
       description,
       startDate,
