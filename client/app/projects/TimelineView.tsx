@@ -46,7 +46,7 @@ const TimelineView = ({ id, setIsModalNewTaskOpen }: Props) => {
     }));
 
   if (isLoading) return <div className="">Loading...</div>;
-  if (error)
+  if (error || !tasks)
     return <div className="">An error occurred while fetching tasks!</div>;
 
   return (

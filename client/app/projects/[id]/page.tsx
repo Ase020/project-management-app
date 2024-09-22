@@ -1,10 +1,12 @@
 "use client";
 
 import React from "react";
-import ProjectHeader from "../ProjectHeader";
+
 import BoardView from "../BoardView";
 import ListView from "../ListView";
-import TimelineView from "@/components/TimelineView";
+import ProjectHeader from "../ProjectHeader";
+import TimelineView from "../TimelineView";
+import TableView from "../TableView";
 
 function Project({ params }: { params: { id: string } }) {
   const { id } = params;
@@ -22,6 +24,9 @@ function Project({ params }: { params: { id: string } }) {
       )}
       {activeTab === "Timeline" && (
         <TimelineView id={id} setIsModalNewTaskOpen={setIsModalNewTaskOpen} />
+      )}
+      {activeTab === "Table" && (
+        <TableView id={id} setIsModalNewTaskOpen={setIsModalNewTaskOpen} />
       )}
     </div>
   );
