@@ -9,6 +9,7 @@ import morgan from "morgan";
 import projectRoutes from "./routes/projects.route";
 import taskRoutes from "./routes/tasks.route";
 import searchRoutes from "./routes/search.route";
+import usersRoutes from "./routes/user.route";
 
 // Configurations
 dotenv.config();
@@ -28,6 +29,7 @@ app.get("/api", (req, res) => {
 app.use("/api/projects", projectRoutes);
 app.use("/api/tasks", taskRoutes);
 app.use("/api/search", searchRoutes);
+app.use("/api/users", usersRoutes);
 
 const port = process.env.PORT || 8001;
 app.listen(port, () => console.log(`Server running on Port:${port}`));
