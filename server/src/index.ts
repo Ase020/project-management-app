@@ -33,5 +33,7 @@ app.use("/api/search", searchRoutes);
 app.use("/api/teams", teamsRoutes);
 app.use("/api/users", usersRoutes);
 
-const port = process.env.PORT || 8001;
-app.listen(port, () => console.log(`Server running on Port:${port}`));
+const port = Number(process.env.PORT || 8001);
+app.listen(port, "0.0.0.0", () =>
+  console.log(`Server running on Port:${port}`)
+);
