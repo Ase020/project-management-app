@@ -41,40 +41,42 @@ function Sidebar() {
   const sidebarClassNames = `fixed flex flex-col h-full justify-between shadow-xl transition-all duration-300 ease-in z-40 dark:bg-black overflow-y-auto bg-white ${isSidebarCollapsed ? "w-0 hidden" : "w-64"}`;
   return (
     <div className={sidebarClassNames}>
-      <div className="flex size-full flex-col justify-start">
-        {/* top logo */}
-        <div className="z-50 flex min-h-[56px] w-64 items-center justify-between bg-white px-6 pt-3 dark:bg-black">
-          <Link
-            href="/"
-            className="text-xl font-bold text-gray-500 dark:text-white"
-          >
-            ProjeX
-          </Link>
-
-          {!isSidebarCollapsed && (
-            <button
-              className="py-3"
-              onClick={() =>
-                dispatch(setIsSidebarCollapsed(!isSidebarCollapsed))
-              }
+      <div className="relative flex size-full flex-col justify-start">
+        <div className="fixed left-0 top-0 z-50 bg-white">
+          {/* top logo */}
+          <div className="z-50 flex min-h-[56px] w-64 items-center justify-between bg-white px-6 pt-3 dark:bg-black">
+            <Link
+              href="/"
+              className="text-xl font-bold text-gray-500 dark:text-white"
             >
-              <X className="size-6 text-gray-800 hover:text-gray-500 dark:text-white" />
-            </button>
-          )}
-        </div>
+              ProjeX
+            </Link>
 
-        {/* team */}
-        <div className="flex items-center gap-5 border-y-[1.5px] border-gray-200 px-8 py-4 dark:border-gray-700">
-          <Image src="/logo.webp" alt="logo" width={40} height={40} />
+            {!isSidebarCollapsed && (
+              <button
+                className="py-3"
+                onClick={() =>
+                  dispatch(setIsSidebarCollapsed(!isSidebarCollapsed))
+                }
+              >
+                <X className="size-6 text-gray-800 hover:text-gray-500 dark:text-white" />
+              </button>
+            )}
+          </div>
 
-          <div>
-            <h3 className="text-lg font-bold tracking-wide dark:text-gray-200">
-              ProjeX Team
-            </h3>
+          {/* team */}
+          <div className="flex items-center gap-5 border-y-[1.5px] border-gray-200 px-8 py-4 dark:border-gray-700">
+            <Image src="/logo.webp" alt="logo" width={40} height={40} />
 
-            <div className="mt-1 flex items-start gap-2">
-              <LockIcon className="mt-[0.1rem] size-3 text-gray-500 dark:text-gray-400" />
-              <p className="text-xs text-gray-500">Private</p>
+            <div>
+              <h3 className="text-lg font-bold tracking-wide dark:text-gray-200">
+                ProjeX Team
+              </h3>
+
+              <div className="mt-1 flex items-start gap-2">
+                <LockIcon className="mt-[0.1rem] size-3 text-gray-500 dark:text-gray-400" />
+                <p className="text-xs text-gray-500">Private</p>
+              </div>
             </div>
           </div>
         </div>
@@ -131,23 +133,23 @@ function Sidebar() {
         {showPriority && (
           <nav className="z-10 w-full">
             <SidebarLink
-              href="/priority/urgent"
+              href="/priority/Urgent"
               label="Urgent"
               icon={AlertCircle}
             />
             <SidebarLink
-              href="/priority/high"
+              href="/priority/High"
               label="High"
               icon={ShieldAlert}
             />
             <SidebarLink
-              href="/priority/medium"
+              href="/priority/Medium"
               label="Medium"
               icon={AlertTriangle}
             />
-            <SidebarLink href="/priority/low" label="Low" icon={AlertOctagon} />
+            <SidebarLink href="/priority/Low" label="Low" icon={AlertOctagon} />
             <SidebarLink
-              href="/priority/backlog"
+              href="/priority/Backlog"
               label="Backlog"
               icon={Layers3}
             />

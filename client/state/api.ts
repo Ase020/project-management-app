@@ -172,6 +172,6 @@ export const {
   useSearchQuery,
   useGetUsersQuery,
   useGetTeamsQuery,
-  // useGetTasksByUserQuery,
+  useGetTasksByUserQuery,
   // useGetAuthUserQuery,
 } = api;
