@@ -53,3 +53,29 @@ export async function updateTask(req: Request, res: Response) {
       .json({ message: `Error updating task: ${error.message}`, error });
   }
 }
+
+export async function getUserTask(req: Request, res: Response) {
+  const { userId } = req.params;
+  try {
+    const tasks = await prisma.task.findMany({
+      where: {
+        OR: [
+          { authorUserId: Number(userId) },
+          { assignedUserId: Number(userId) },
+        ],
+      },
+      include: {
+        author: true,
+        assignee: true,
+      },
+    });
+    res.status(200).json(tasks);
+  } catch (error: any) {
+    res
+      .status(500)
+      .json({
+        message: `Error fetching user's tasks: ${error.message}`,
+        error,
+      });
+  }
+}
